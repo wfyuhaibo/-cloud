@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.9.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.yhb</groupId>
+    <artifactId>cloud</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>cloud</name>
+    <description>Demo project for Spring cloud</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <mysql.version>5.1.47</mysql.version>
+        <mybatis.plus.version>3.1.2</mybatis.plus.version>
+        <lombok.version>1.18.8</lombok.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+    </properties>
+
+    <!-- 引入 spring-cloud模块 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- 引入 spring-boot插件模块 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <!-- 服务注册发现 -->
+        <module>cloud-eureka</module>
+        <!-- 统一网关中心 -->
+        <module>pmsgateway</module>
+        <!-- 统一认证和鉴权中心 -->
+        <module>cloud-auth</module>
+        <!-- 统一服务资源配置中心 -->
+        <module>pmsconfigserver</module>
+        <!-- 统一服务资源配置客户端 -->
+        <module>pmsconfigclient</module>
+        <!-- pms工具包 -->
+        <module>cloud-commons</module>
+        <!-- 统一消息配置中心 -->
+        <module>pmsbusmessage</module>
+        <module>cloud-commons/cloud-common</module>
+        <module>cloud-commons/cloud-swagger2-starter</module>
+
+
+        <!-- 统一数据报表中心 -->
+        <!--<module>pmsbiserver</module>-->
+        <!-- 中台统一服务配置中心 -->
+        <!--<module>pmsopration</module>-->
+        <!-- 场景服务配置中心 -->
+        <!--<module>sceneopration</module>-->
+        <!-- 房源 -->
+        <!--<module>house</module>-->
+        <!-- 合同 -->
+        <!--<module>contract</module>-->
+        <!-- 账单 -->
+        <!--<module>payment</module>-->
+        <!-- 流水 -->
+        <!--<module>flow</module>-->
+        <!-- 三方集市服务 -->
+        <!--<module>sharedserver</module>-->
+    </modules>
+
+</project>
