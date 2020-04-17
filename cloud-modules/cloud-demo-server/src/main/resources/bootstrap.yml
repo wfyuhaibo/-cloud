@@ -1,0 +1,40 @@
+server:
+  port: 9004
+
+#配置服务名称
+spring:
+  application:
+    name: cloud-demo-server
+
+#---------------------OAuth2---------------------
+security:
+  oauth2:
+    resource:
+      id: cloud-demo-server
+      user-info-uri: http://localhost:9002/auth/api/user
+      prefer-token-info: false
+
+#将服务注册到注册中心
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+#（包含所有端点的信息）
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+      health:
+        show-details: always
+
+swagger2:
+  base:
+    package: com.yhb.demo.controller
+  group:
+    name: spring-cloud-demo

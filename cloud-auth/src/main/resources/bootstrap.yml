@@ -1,3 +1,5 @@
+server:
+  port: 9003
 #配置服务名称
 spring:
   application:
@@ -33,15 +35,18 @@ spring:
     filters: stat,wall,log4j #配置扩展插件，常用的插件有=>stat:监控统计  log4j:日志  wall:防御sql注入
     connectionProperties: 'druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000' #通过connectProperties属性来打开mergeSql功能;慢SQL记录
 
-server:
-  port: 9005
-
 #将服务注册到注册中心
 eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
   client:
     serviceUrl:
       defaultZone: http://localhost:9001/eureka/
 
+ribbon:
+  eureka:
+    enable: true
 #（包含所有端点的信息）
 management:
   endpoints:
@@ -72,6 +77,6 @@ mybatis-plus:
 
 swagger2:
   base:
-    package: com.yhb.authcontroller
+    package: com.yhb.auth.controller
   group:
     name: spring-cloud-auth

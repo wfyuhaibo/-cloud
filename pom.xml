@@ -69,7 +69,7 @@
         <!-- 服务注册发现 -->
         <module>cloud-eureka</module>
         <!-- 统一网关中心 -->
-        <module>pmsgateway</module>
+        <module>cloud-gateway</module>
         <!-- 统一认证和鉴权中心 -->
         <module>cloud-auth</module>
         <!-- 统一服务资源配置中心 -->
@@ -80,8 +80,8 @@
         <module>cloud-commons</module>
         <!-- 统一消息配置中心 -->
         <module>pmsbusmessage</module>
-        <module>cloud-commons/cloud-common</module>
-        <module>cloud-commons/cloud-swagger2-starter</module>
+        <!-- 业务服务 -->
+        <module>cloud-modules</module>
 
 
         <!-- 统一数据报表中心 -->
@@ -90,14 +90,6 @@
         <!--<module>pmsopration</module>-->
         <!-- 场景服务配置中心 -->
         <!--<module>sceneopration</module>-->
-        <!-- 房源 -->
-        <!--<module>house</module>-->
-        <!-- 合同 -->
-        <!--<module>contract</module>-->
-        <!-- 账单 -->
-        <!--<module>payment</module>-->
-        <!-- 流水 -->
-        <!--<module>flow</module>-->
         <!-- 三方集市服务 -->
         <!--<module>sharedserver</module>-->
     </modules>

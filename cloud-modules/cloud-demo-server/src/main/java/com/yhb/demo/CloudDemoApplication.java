@@ -1,17 +1,17 @@
-package com.yhb.auth;
+package com.yhb.demo;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
-@MapperScan("com.yhb.auth.repository")
 @SpringBootApplication
 @EnableDiscoveryClient
-public class AuthApplication {
+@EnableGlobalMethodSecurity(prePostEnabled = true)
+public class CloudDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthApplication.class, args);
+        SpringApplication.run(CloudDemoApplication.class, args);
     }
 
 }
