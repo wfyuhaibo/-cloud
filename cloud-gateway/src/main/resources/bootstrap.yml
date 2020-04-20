@@ -4,15 +4,20 @@ server:
 spring:
   application:
     name: cloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.103.1.53:8848 #nacos注册服务器地址
+#        namespace: 68bd91c4-011b-4629-b8e7-e9f5fbc0c22d #默认为public命名空间,可以省略不写
 
 #将服务注册到注册中心
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9001/eureka/
+#eureka:
+#  instance:
+#   prefer-ip-address: true
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:9001/eureka/
 
 zuul:
   routes:
