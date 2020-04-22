@@ -5,6 +5,11 @@ server:
 spring:
   application:
     name: cloud-demo-server
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.103.1.53:8848 #nacos注册服务器地址
+        namespace: 5b1e00c4-9053-4102-b7d5-39b0f1ca42f2 #默认为public命名空间,可以省略不写
 
 #---------------------OAuth2---------------------
 security:
@@ -14,14 +19,6 @@ security:
       user-info-uri: http://localhost:9002/auth/api/user
       prefer-token-info: false
 
-#将服务注册到注册中心
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9001/eureka/
 
 #（包含所有端点的信息）
 management:

@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: cloud-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.103.1.53:8848 #nacos注册服务器地址
+        namespace: 5b1e00c4-9053-4102-b7d5-39b0f1ca42f2 #默认为public命名空间,可以省略不写
   redis:
     database: 0
     host: 47.103.1.53
@@ -34,15 +39,6 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20 #开启poolPreparedStatements后生效
     filters: stat,wall,log4j #配置扩展插件，常用的插件有=>stat:监控统计  log4j:日志  wall:防御sql注入
     connectionProperties: 'druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000' #通过connectProperties属性来打开mergeSql功能;慢SQL记录
-
-#将服务注册到注册中心
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:9001/eureka/
 
 ribbon:
   eureka:

@@ -20,13 +20,17 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <spring-cloud-alibaba.version>0.2.1.RELEASE</spring-cloud-alibaba.version>
+        <druid.version>1.1.9</druid.version>
         <mysql.version>5.1.47</mysql.version>
         <mybatis.plus.version>3.1.2</mybatis.plus.version>
-        <lombok.version>1.18.8</lombok.version>
         <fastjson.version>1.2.47</fastjson.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
         <springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+        <guava.version>20.0</guava.version>
+        <spring-boot-admin.version>2.0.3</spring-boot-admin.version>
+        <lombok.version>1.18.8</lombok.version>
         <nacos-client.version>1.1.4</nacos-client.version>
+        <commons.pool2.version>2.0</commons.pool2.version>
     </properties>
 
     <!-- 引入 spring-cloud模块 -->
@@ -75,20 +79,18 @@
     </build>
 
     <modules>
-        <!-- 服务注册发现 -->
-        <module>cloud-eureka</module>
         <!-- 统一网关中心 -->
         <module>cloud-gateway</module>
         <!-- 统一认证和鉴权中心 -->
         <module>cloud-auth</module>
         <!-- 统一服务资源配置中心 -->
-        <module>pmsconfigserver</module>
+<!--        <module>pmsconfigserver</module>-->
         <!-- 统一服务资源配置客户端 -->
-        <module>pmsconfigclient</module>
+<!--        <module>pmsconfigclient</module>-->
         <!-- pms工具包 -->
         <module>cloud-commons</module>
         <!-- 统一消息配置中心 -->
-        <module>pmsbusmessage</module>
+<!--        <module>pmsbusmessage</module>-->
         <!-- 业务服务 -->
         <module>cloud-modules</module>
 
