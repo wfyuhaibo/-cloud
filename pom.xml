@@ -68,15 +68,6 @@
         </dependency>
     </dependencies>
 
-    <!-- 引入 spring-boot插件模块 -->
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
     <modules>
         <!-- 统一网关中心 -->
