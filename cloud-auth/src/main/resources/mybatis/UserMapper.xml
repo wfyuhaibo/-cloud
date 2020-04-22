@@ -4,7 +4,7 @@
 
     <select id="findByName" parameterType="java.lang.String" resultType="com.yhb.auth.entity.UserDTO">
         select id,`name`,sex,password,mobile,birthday,email
-        from t_user where `name` = #{name,jdbcType=VARCHAR}
+        from t_user where `name` = #{name,jdbcType=VARCHAR} and is_deleted = 0
     </select>
 
 </mapper>
