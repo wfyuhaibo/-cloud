@@ -35,8 +35,8 @@ zuul:
     eager-load:
       enabled: true
   host:
-    connect-timeout-millis: 3000
-    socket-timeout-millis: 3000
+    connect-timeout-millis: 100000
+    socket-timeout-millis: 100000
   add-proxy-headers: true
 
 
