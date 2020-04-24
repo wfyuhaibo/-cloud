@@ -3,21 +3,10 @@ server:
 
 #配置服务名称
 spring:
+  profiles:
+    active: dev #指定环境
   application:
     name: cloud-demo-server
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 47.103.1.53:8848 #nacos注册服务器地址
-        namespace: 5b1e00c4-9053-4102-b7d5-39b0f1ca42f2 #默认为public命名空间,可以省略不写
-
-#---------------------OAuth2---------------------
-security:
-  oauth2:
-    resource:
-      id: cloud-demo-server
-      user-info-uri: http://localhost:9002/auth/api/user
-      prefer-token-info: false
 
 
 #（包含所有端点的信息）

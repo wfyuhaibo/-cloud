@@ -2,67 +2,10 @@ server:
   port: 9002
 #配置服务名称
 spring:
+  profiles:
+    active: dev #指定环境
   application:
     name: cloud-gateway
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 47.103.1.53:8848 #nacos注册服务器地址
-        namespace: 5b1e00c4-9053-4102-b7d5-39b0f1ca42f2 #默认为public命名空间,可以省略不写
-
-#将服务注册到注册中心
-#eureka:
-#  instance:
-#   prefer-ip-address: true
-#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:9001/eureka/
-
-zuul:
-  routes:
-    cloud-auth:
-      path: /auth/**
-      serviceId: cloud-auth
-      sensitiveHeaders: "*"
-    cloud-demo-server:
-      path: /demo/**
-      serviceId: cloud-demo-server
-      sensitiveHeaders: "*"
-  retryable: false
-  ignoredServices: "*"
-  ribbon:
-    eager-load:
-      enabled: true
-  host:
-    connect-timeout-millis: 100000
-    socket-timeout-millis: 100000
-  add-proxy-headers: true
-
-
-#---------------------OAuth2---------------------
-security:
-  oauth2:
-    client:
-      access-token-uri: http://localhost:9002/auth/oauth/token
-      user-authorization-uri: http://localhost:9002/auth/oauth/authorize
-      id: web
-    resource:
-      user-info-uri: http://localhost:9002/auth/api/user
-      prefer-token-info: false
-
-#----------------------超时配置-------------------
-ribbon:
-  ReadTimeout: 3000
-  ConnectTimeout: 3000
-  MaxAutoRetries: 1
-  MaxAutoRetriesNextServer: 2
-  eureka:
-    enabled: true
-
-white:
-  ips:
-    list: 127.0.0.1,0:0:0:0:0:0:0:1
 
 #（包含所有端点的信息）
 management:
