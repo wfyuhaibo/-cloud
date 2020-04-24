@@ -1,5 +1,7 @@
 package com.yhb.demo.controller;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +11,11 @@ import java.security.Principal;
 
 @RestController
 @RequestMapping("/api/demo/")
+@RefreshScope
 public class UserController {
+
+    @Value("${demo-server.picture.basePath:}")
+    private String basePath;
 
     @GetMapping("hello")
     @PreAuthorize("hasAnyAuthority('demo/hello')")
@@ -27,4 +33,10 @@ public class UserController {
     public String query() {
         return "具有query权限";
     }
+
+    @GetMapping("config")
+    public String testConfig() {
+        return basePath;
+    }
+
 }
