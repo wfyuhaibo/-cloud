@@ -5,18 +5,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
+        <artifactId>cloud-commons</artifactId>
         <groupId>com.yhb</groupId>
-        <artifactId>cloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>cloud-commons</artifactId>
+    <artifactId>cloud-feign-api</artifactId>
     <packaging>pom</packaging>
 
-    <modules>
-        <module>cloud-common</module>
-        <module>cloud-swagger2-starter</module>
-        <module>cloud-feign-api</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.yhb</groupId>
+            <artifactId>cloud-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 
+    <modules>
+        <module>feign-data-server</module>
+    </modules>
 </project>

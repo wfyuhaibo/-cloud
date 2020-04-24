@@ -1,12 +1,12 @@
 server:
-  port: 9004
+  port: 9005
 
 #配置服务名称
 spring:
   profiles:
     active: dev #指定环境
   application:
-    name: cloud-demo-server
+    name: cloud-data-server
 
 
 #（包含所有端点的信息）
@@ -21,6 +21,6 @@ management:
 
 swagger2:
   base:
-    package: com.yhb.demo.controller
+    package: com.yhb.data.controller
   group:
-    name: spring-cloud-demo
+    name: spring-cloud-data

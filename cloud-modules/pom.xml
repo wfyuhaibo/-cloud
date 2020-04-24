@@ -12,8 +12,18 @@
     <artifactId>cloud-modules</artifactId>
     <packaging>pom</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.yhb</groupId>
+            <artifactId>cloud-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
+
     <modules>
-        <module>cloud-demo-server</module>
+        <module>cloud-user-server</module>
+        <module>cloud-data-server</module>
     </modules>
 
 
